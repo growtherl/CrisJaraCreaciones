@@ -273,7 +273,8 @@
                         <button class="tab-button" data-tab="reserva">Reservar Turno</button>
                     </div>
 
-                    <form id="consulta-form" class="contact-form" style="display: grid;">
+                    <form id="consulta-form" class="contact-form" style="display: grid;" action="https://formspree.io/f/xzzvapqa" method="POST">
+    </form>
                         <input type="text" name="name" placeholder="Tu Nombre" required>
                         <input type="email" name="email" placeholder="Tu Email" required>
                         <input type="text" name="subject" placeholder="Asunto">
@@ -281,7 +282,8 @@
                         <button type="submit" class="btn btn-primary btn-form-submit">Enviar Mensaje</button>
                     </form>
 
-                    <form id="reserva-form" class="contact-form" style="display: none;">
+                    <form id="reserva-form" class="contact-form" style="display: none;" action="https://formspree.io/f/xpwljaeb" method="POST">
+    </form>
                         <input type="text" name="name" placeholder="Tu Nombre" required>
                         <input type="email" name="email" placeholder="Tu Email" required>
                         <select name="service" required>
@@ -348,4 +350,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
