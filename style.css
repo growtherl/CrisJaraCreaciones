@@ -1,0 +1,1171 @@
+/* --- Estilos Generales y Reseteo --- */
+:root {
+    --primary-color: #ff69b4; /* Rosa Chicle / Hot Pink */
+    --secondary-color: #ffb6c1; /* Rosa Claro / Light Pink */
+    --accent-color: #fce4ec; /* Rosa Muy Claro / Extra Light Pink */
+    --text-color: #333;
+    --light-text-color: #666;
+    --white-color: #fff;
+    --dark-color: #1a1a1a;
+
+    /* Nuevas variables para el encabezado retráctil */
+    --header-initial-height: 100px; /* Altura inicial del header (ajústala si la tuya es diferente) */
+    --header-scrolled-height: 60px; /* Altura del header cuando se contrae (ajústala a tu gusto) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    /* IMPORTANTE: Padding para el header fijo. Debe ser igual o un poco mayor que --header-initial-height */
+    padding-top: var(--header-initial-height);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Botones Generales --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #e05c9e; /* Un tono más oscuro de rosa */
+    border-color: #e05c9e;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e0a3b0; /* Un tono más oscuro de rosa claro */
+    border-color: #e0a3b0;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* --- Secciones Comunes --- */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.section-title .highlight {
+    color: var(--primary-color);
+}
+
+.section-description {
+    font-size: 1.15rem;
+    color: var(--light-text-color);
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+/* --- Encabezado Principal (con efecto de contracción) --- */
+.main-header {
+    position: fixed; /* Hace que el header se quede fijo en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white-color); /* Color de fondo de tu header */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sutil sombra */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    padding: 20px 0; /* Padding inicial del header (ajústalo si es diferente) */
+    transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--header-initial-height); /* Altura mínima inicial */
+}
+
+.main-header .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* O el ancho máximo que uses para tu contenedor */
+    padding: 0 20px; /* Padding horizontal dentro del contenedor del header */
+}
+
+/* Estilos para el encabezado cuando se hace scroll (se contrae) */
+.main-header.header-scrolled {
+    padding: 10px 0; /* Reduce el padding para hacerlo más compacto */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada al hacer scroll */
+    min-height: var(--header-scrolled-height); /* Nueva altura mínima */
+}
+
+/* Estilos para el logo dentro del header */
+.main-header .logo-img {
+    max-height: 60px; /* Tamaño inicial del logo (ajústalo a tu tamaño original) */
+    transition: max-height 0.3s ease-in-out;
+}
+
+/* Estilos para el logo cuando el header se contrae */
+.main-header.header-scrolled .logo-img {
+    max-height: 40px; /* Tamaño más pequeño del logo al hacer scroll (ajústalo a tu gusto) */
+}
+
+.main-header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.main-menu ul {
+    display: flex;
+}
+
+.main-menu li {
+    margin-left: 30px;
+}
+
+.main-menu a {
+    color: var(--dark-color);
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    padding: 10px 0;
+}
+
+.main-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.main-menu a:hover::after,
+.main-menu a.active::after {
+    width: 100%;
+}
+
+.main-menu a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Ajustes opcionales para los elementos del menú y botón al contraerse */
+.main-header .main-menu li a {
+    padding: 10px 15px; /* Ajusta el padding de los enlaces */
+    font-size: 1rem;
+    transition: padding 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.main-header.header-scrolled .main-menu li a {
+    padding: 8px 12px;
+    font-size: 0.9rem; /* Reduce el tamaño de fuente */
+}
+
+.main-header .reserve-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: padding 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.main-header.header-scrolled .reserve-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+
+/* Menú Móvil (Hamburguesa) */
+.menu-toggle {
+    display: none; /* Oculto por defecto en desktop */
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--dark-color);
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/* --- Sección Hero --- */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0; /* Ya se maneja con padding-top del body */
+    text-align: center;
+    background-color: var(--white-color);
+    overflow: hidden; /* Para contener la imagen */
+}
+
+.hero-content {
+    padding: 60px 20px;
+    text-align: center;
+    z-index: 1; /* Para asegurar que el contenido esté por encima de la imagen en algunos casos */
+}
+
+.hero-content .subtitle-star {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: var(--dark-color);
+    margin-bottom: 25px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--light-text-color);
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.hero-buttons .btn {
+    margin: 10px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 500px; /* Altura fija para la imagen */
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    object-position: top center; /* Ajusta la posición para mostrar la parte superior de la persona */
+}
+
+/* --- Sección About Stats --- */
+.about-stats-section {
+    background-color: var(--accent-color);
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.stat-item {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.stat-item h3 {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    color: var(--light-text-color);
+}
+
+/* --- Sección Mis Creaciones / Trabajos --- */
+.creations-section {
+    background-color: var(--white-color);
+}
+
+.filter-buttons {
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.filter-btn {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.creations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.creation-item {
+    background-color: var(--white-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.creation-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.creation-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+.creation-item .item-content {
+    padding: 25px;
+}
+
+.creation-item .tag {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--white-color);
+}
+
+/* Colores de tags ajustados a la paleta rosa */
+.tag-novias { background-color: #ff69b4; /* Rosa Chicle */ }
+.tag-formal { background-color: #ffb6c1; /* Rosa Claro */ }
+.tag-eventos { background-color: #da70d6; /* Orquídea */ }
+.tag-casual { background-color: #cd5c5c; /* Rojo Indio */ }
+
+
+.creation-item h3 {
+    font-size: 1.6rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.creation-item p {
+    color: var(--light-text-color);
+    font-size: 0.95rem;
+}
+
+
+/* --- Sección Mis Servicios --- */
+.services-section {
+    background-color: var(--accent-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--white-color);
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--light-text-color);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Para que el párrafo ocupe el espacio disponible */
+}
+
+.service-card ul {
+    margin-bottom: 20px;
+}
+
+.service-card ul li {
+    display: flex;
+    align-items: center;
+    color: var(--light-text-color);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.service-card ul li i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+    font-size: 0.7rem;
+}
+
+.service-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.service-price.consult-text {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.service-card .btn-service {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Empuja el botón hacia abajo */
+}
+
+.service-card .btn-service:hover {
+    background-color: #e05c9e;
+}
+
+
+/* --- Sección Sobre Mí --- */
+.about-me-section {
+    background-color: var(--white-color);
+}
+
+.about-me-content {
+    display: flex;
+    flex-direction: row; /* Desktop: imagen a la izquierda, texto a la derecha */
+    gap: 50px;
+    align-items: center;
+    text-align: left; /* Alineación de texto a la izquierda en desktop */
+}
+
+.about-image {
+    flex: 1;
+    max-width: 50%; /* Ocupa la mitad del espacio en desktop */
+}
+
+.about-image img {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Asegura que la imagen sea responsiva dentro de su contenedor */
+    height: 450px; /* Altura fija para la imagen */
+    object-fit: cover; /* Ajusta la imagen para cubrir el espacio */
+    object-position: center;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 50%; /* Ocupa la mitad del espacio en desktop */
+}
+
+.about-text .section-title {
+    text-align: left; /* Alinea el título a la izquierda */
+    font-size: 2.5rem; /* Ajusta el tamaño del título para esta sección */
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.about-text .btn {
+    margin-top: 20px;
+}
+
+
+/* --- Sección de Contacto Completa --- */
+.contact-full-section {
+    background-color: var(--accent-color);
+    padding: 80px 0;
+}
+
+.talk-project-title {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.talk-project-description {
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Info a la izquierda, formulario a la derecha */
+    gap: 40px;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    padding: 40px;
+    text-align: left;
+}
+
+.contact-info-panel {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 40px;
+    border-radius: 8px; /* Redondeo solo en los bordes visibles */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el espacio */
+}
+
+.contact-info-panel h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.contact-item:last-of-type {
+    margin-bottom: 0;
+}
+
+.contact-icon {
+    font-size: 1.8rem;
+    margin-right: 15px;
+    color: var(--secondary-color);
+    width: 30px; /* Ancho fijo para iconos */
+    text-align: center;
+}
+
+.contact-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.contact-item p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hours-info {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hours-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hours-info p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hours-info p span {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.contact-form-panel {
+    padding: 20px 0;
+}
+
+.form-tabs {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.tab-button {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--light-text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+    color: var(--dark-color);
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--dark-color);
+    background-color: #f9f9f9;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2); /* Sombra con el color primario rosa */
+}
+
+.contact-form textarea {
+    grid-column: 1 / -1; /* Ocupa ambas columnas */
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-6.5%200-13.1%202.6-17.7%207.2-4.6%204.6-4.6%2012%200%2016.6l128%20128c4.6%204.6%2012%204.6%2016.6%200l128-128c4.7-4.6%204.7-12.1.1-16.7z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+}
+
+.contact-form .btn-form-submit {
+    grid-column: 1 / -1; /* Ocupa ambas columnas */
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.contact-form .btn-form-submit:hover {
+    background-color: #e05c9e;
+}
+
+/* Campos de fecha y hora */
+.contact-form input[type="date"],
+.contact-form input[type="time"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 60px 0 20px;
+    text-align: left;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-about .logo-footer {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.footer-about .logo-img-footer {
+    height: 70px; /* Tamaño del logo en el footer */
+}
+
+.footer-about p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+}
+
+.footer-social-icons a {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: var(--white-color);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-links h4::after,
+.footer-contact h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-contact p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- Media Queries para Responsive Design --- */
+
+/* Tablet (768px a 1024px) */
+@media (max-width: 1024px) {
+    .main-header .main-menu {
+        display: none; /* Oculta el menú de navegación en tablet y móvil */
+    }
+
+    .main-header .reserve-button {
+        display: none; /* Oculta el botón de reserva en tablet y móvil */
+    }
+
+    .menu-toggle {
+        display: flex; /* Muestra el menú de hamburguesa */
+    }
+
+    /* ESTILOS PARA EL MENÚ MÓVIL EN TABLET Y MÓVIL (oculto por defecto) */
+    .main-menu ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed; /* Usamos 'fixed' para la barra lateral */
+        top: var(--header-initial-height); /* Se inicia debajo del header */
+        left: -100%; /* Oculto fuera de la pantalla a la izquierda */
+        width: 70%; /* Ancho de la barra lateral (ajústalo) */
+        max-width: 300px;
+        height: calc(100vh - var(--header-initial-height)); /* Altura del viewport menos la altura del header */
+        background-color: var(--white-color); /* Fondo de la barra lateral */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Sombra hacia la derecha */
+        padding: 20px 0;
+        z-index: 999; /* Por debajo del header, pero por encima del contenido */
+        transition: left 0.3s ease-in-out; /* Transición para que se deslice */
+        align-items: flex-start; /* Alinea los items a la izquierda dentro de la barra lateral */
+        overflow-y: auto; /* Para permitir scroll si hay muchos elementos */
+    }
+
+    /* Cuando el header se encoge, el menú móvil también se ajusta en su 'top' */
+    .main-header.header-scrolled .main-menu ul {
+        top: var(--header-scrolled-height);
+        height: calc(100vh - var(--header-scrolled-height));
+    }
+
+    /* ESTADO ACTIVO: CUANDO SE MUESTRA LA BARRA LATERAL */
+    .main-menu ul.active {
+        left: 0; /* Desliza la barra lateral para que sea visible */
+    }
+    
+    .main-menu ul li {
+        margin: 10px 0;
+        width: 100%; /* Para que los enlaces ocupen el ancho de la barra */
+    }
+
+    .main-menu ul li a {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        display: block;
+        text-align: left; /* Alinea el texto a la izquierda en el menú móvil */
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .about-me-content {
+        flex-direction: column; /* Columna en tablets */
+        text-align: center;
+    }
+
+    .about-image, .about-text {
+        max-width: 100%; /* Ocupan todo el ancho */
+    }
+
+    .about-text .section-title {
+        text-align: center;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr; /* Una columna en tablets */
+    }
+
+    .contact-info-panel {
+        padding: 30px;
+    }
+    .contact-form-panel {
+        padding: 20px;
+    }
+}
+
+/* Móvil (hasta 767px) */
+@media (max-width: 767px) {
+    .main-header {
+        padding: 15px 0; /* Un poco menos de padding inicial en móvil */
+    }
+    .main-header .logo-img {
+        max-height: 50px; /* Logo un poco más pequeño en móvil */
+    }
+    .main-header.header-scrolled {
+        padding: 8px 0; /* Más reducido al scroll */
+    }
+    .main-header.header-scrolled .logo-img {
+        max-height: 35px; /* Logo más pequeño al scroll */
+    }
+
+    body {
+        padding-top: var(--header-initial-height); /* Ajuste para móvil si el header es más pequeño */
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-content {
+        padding: 40px 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+    .hero-buttons .btn {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .hero-image {
+        height: 350px; /* Menor altura en móvil */
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .filter-btn {
+        width: 100%;
+    }
+
+    .creations-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+
+    .about-image img {
+        height: 300px; /* Menor altura para imagen Sobre Mí */
+    }
+
+    .about-text .section-title {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .contact-grid {
+        padding: 20px;
+    }
+
+    .contact-info-panel {
+        padding: 25px;
+    }
+
+    .contact-info-panel h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    .contact-icon {
+        margin-right: 0;
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+    }
+
+    .contact-item h4 {
+        font-size: 1.1rem;
+    }
+
+    .hours-info {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+    .hours-info h3 {
+        font-size: 1.3rem;
+    }
+    .hours-info p {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 5px;
+    }
+    .hours-info p span {
+        margin-left: 0;
+        margin-top: 3px;
+    }
+
+    .form-tabs {
+        flex-direction: column;
+    }
+    .tab-button {
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 15px;
+    }
+
+    .main-footer {
+        padding: 40px 0 15px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+
+    .footer-links h4, .footer-contact h4 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+}
+
+/* Media Query para pantallas muy pequeñas (Ej: iPhone 5/SE) */
+@media (max-width: 375px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-image {
+        height: 300px;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
