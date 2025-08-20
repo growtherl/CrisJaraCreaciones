@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cris Creaciones - Diseño y Confección a Medida</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="imagenes/favicon.png" type="image/png">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container container">
+            <a href="#inicio" class="logo">
+                <img src="imagenes/Logo-Cris-Creaciones-small.png" alt="Cris Creaciones" class="logo-img">
+            </a>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#trabajos">Trabajos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#contacto" class="btn btn-primary reserve-button">
+                <i class="fas fa-calendar-alt"></i> Reservar Turno
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section" id="inicio">
+        <div class="hero-content container">
+            <span class="subtitle-star"><i class="fas fa-star"></i> Diseñadora & Modista</span>
+            <h1>Creando Elegancia a Medida</h1>
+            <p>Transformo tus ideas en piezas únicas. Con más de 15 años de experiencia, confecciono vestidos, trajes y prendas que reflejan tu personalidad y estilo.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn btn-secondary">Reservar Consulta</a>
+                <a href="#trabajos" class="btn btn-outline">Ver Trabajos</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="imagenes/Taller-De-Costura.jpeg" alt="Diseñadora trabajando">
+        </div>
+    </section>
+
+    <section class="about-stats-section">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Certificación Profesional</h3>
+                <p>Graduada del Instituto de Diseño de Moda</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <h3>500+ Clientes Satisfechos</h3>
+                <p>Una comunidad que confía en mi trabajo</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                <h3>15 Años de Experiencia</h3>
+                <p>Perfeccionando el arte de la costura</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                <h3>Pasión por el Detalle</h3>
+                <p>Cada puntada hecha con amor y precisión</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="creations-section" id="trabajos">
+        <div class="container">
+            <h2 class="section-title">Mis <span class="highlight">Creaciones</span></h2>
+            <p class="section-description">Cada pieza es única y está diseñada especialmente para resaltar la belleza y personalidad de quien la lleva.</p>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="novias">Novias</button>
+                <button class="filter-btn" data-filter="formal">Formal</button>
+                <button class="filter-btn" data-filter="eventos">Eventos</button>
+                <button class="filter-btn" data-filter="casual">Casual</button>
+            </div>
+
+            <div class="creations-grid">
+                <div class="creation-item" data-category="novias">
+                    <img src="imagenes/Vestido-De-Novia-Clasico.jpeg" alt="Vestido de Novia Clásico">
+                    <div class="item-content">
+                        <span class="tag tag-novias">Novias</span>
+                        <h3>Vestido de Novia Clásico</h3>
+                        <p>Vestido de novia con encaje francés y cola desmontable.</p>
+                    </div>
+                </div>
+                <div class="creation-item" data-category="formal">
+                    <img src="imagenes/Traje-Para-Ejecutiva.jpeg" alt="Traje Ejecutivo">
+                    <div class="item-content">
+                        <span class="tag tag-formal">Formal</span>
+                        <h3>Traje Ejecutivo</h3>
+                        <p>Traje a medida para ejecutiva con detalles únicos.</p>
+                    </div>
+                </div>
+                <div class="creation-item" data-category="eventos">
+                    <img src="imagenes/Vestido-De-Gala.jpeg" alt="Vestido de Gala">
+                    <div class="item-content">
+                        <span class="tag tag-eventos">Eventos</span>
+                        <h3>Vestido de Gala</h3>
+                        <p>Vestido de gala con bordados artesanales.</p>
+                    </div>
+                </div>
+                <div class="creation-item" data-category="casual">
+                    <img src="imagenes/Conjunto-Casual.jpeg" alt="Conjunto Casual ">
+                    <div class="item-content">
+                        <span class="tag tag-casual">Casual</span>
+                        <h3>Conjunto Casual Chic</h3>
+                        <p>Conjunto moderno para uso diario elegante.</p>
+                    </div>
+                </div>
+                <div class="creation-item" data-category="eventos">
+                    <img src="imagenes/Vestido-De-Madrina.jpeg" alt="Vestido de Madrina">
+                    <div class="item-content">
+                        <span class="tag tag-eventos">Eventos</span>
+                        <h3>Vestido de Madrina</h3>
+                        <p>Diseño sofisticado para ocasiones especiales.</p>
+                    </div>
+                </div>
+                <div class="creation-item" data-category="formal">
+                    <img src="imagenes/Traje-De-Seremonia.jpeg" alt="Traje de Ceremonia">
+                    <div class="item-content">
+                        <span class="tag tag-formal">Formal</span>
+                        <h3>Traje de Ceremonia</h3>
+                        <p>Traje masculino para ceremonias importantes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Mis <span class="highlight">Servicios</span></h2>
+            <p class="section-description">Ofrezco una amplia gama de servicios de diseño y confección, adaptándome a tus necesidades y presupuesto.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-crown"></i></div>
+                    <h3>Vestidos de Novia</h3>
+                    <p>Diseños únicos para el día más especial de tu vida</p>
+                    <ul>
+                        <li><i class="fas fa-circle-dot"></i> Consulta personalizada</li>
+                        <li><i class="fas fa-circle-dot"></i> Múltiples pruebas</li>
+                        <li><i class="fas fa-circle-dot"></i> Ajustes incluidos</li>
+                    </ul>
+                    <div class="service-price">Desde $800</div>
+                    <button class="btn btn-service">Solicitar Servicio</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-sparkles"></i></div>
+                    <h3>Vestidos de Fiesta</h3>
+                    <p>Elegancia y sofisticación para eventos especiales</p>
+                    <ul>
+                        <li><i class="fas fa-circle-dot"></i> Diseño exclusivo</li>
+                        <li><i class="fas fa-circle-dot"></i> Telas premium</li>
+                        <li><i class="fas fa-circle-dot"></i> Acabados de lujo</li>
+                    </ul>
+                    <div class="service-price">Desde $400</div>
+                    <button class="btn btn-service">Solicitar Servicio</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tshirt"></i></div>
+                    <h3>Ropa Formal</h3>
+                    <p>Trajes y conjuntos para el ámbito profesional</p>
+                    <ul>
+                        <li><i class="fas fa-circle-dot"></i> Corte perfecto</li>
+                        <li><i class="fas fa-circle-dot"></i> Telas de calidad</li>
+                        <li><i class="fas fa-circle-dot"></i> Estilo profesional</li>
+                    </ul>
+                    <div class="service-price">Desde $300</div>
+                    <button class="btn btn-service">Solicitar Servicio</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-grin-hearts"></i></div>
+                    <h3>Ropa Casual</h3>
+                    <p>Prendas cómodas y elegantes para el día a día</p>
+                    <ul>
+                        <li><i class="fas fa-circle-dot"></i> Comodidad garantizada</li>
+                        <li><i class="fas fa-circle-dot"></i> Diseños modernos</li>
+                        <li><i class="fas fa-circle-dot"></i> Versatilidad</li>
+                    </ul>
+                    <div class="service-price">Desde $150</div>
+                    <button class="btn btn-service">Solicitar Servicio</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cut"></i></div>
+                    <h3>Arreglos y Ajustes</h3>
+                    <p>Modificaciones y reparaciones de prendas existentes</p>
+                    <ul>
+                        <li><i class="fas fa-circle-dot"></i> Servicio rápido</li>
+                        <li><i class="fas fa-circle-dot"></i> Precios accesibles</li>
+                        <li><i class="fas fa-circle-dot"></i> Calidad garantizada</li>
+                    </ul>
+                    <div class="service-price">Desde $30</div>
+                    <button class="btn btn-service">Solicitar Servicio</button>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hourglass-start"></i></div>
+                    <h3>Servicio Express</h3>
+                    <p>Para cuando necesitas tu prenda con urgencia</p>
+                    <ul>
+                        <li><i class="fas fa-circle-dot"></i> Entrega rápida</li>
+                        <li><i class="fas fa-circle-dot"></i> Sin comprometer calidad</li>
+                        <li><i class="fas fa-circle-dot"></i> Disponibilidad limitada</li>
+                    </ul>
+                    <div class="service-price consult-text">Consultar</div>
+                    <button class="btn btn-service">Solicitar Servicio</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-me-section" id="sobre-mi">
+        <div class="container about-me-content">
+            <div class="about-image">
+                <img src="imagenes/Sobre-Mi copia desenfocado.jpeg" alt="Taller de costura">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title">Sobre <span class="highlight">Mí</span></h2>
+                <p>Soy Cristina Jara, una diseñadora y modista apasionada con más de 15 años de experiencia en el mundo de la moda. Mi amor por la costura comenzó desde muy joven, cuando mi abuela me enseñó los primeros puntos.</p>
+                <p>Me especializo en crear piezas únicas que no solo se ven hermosas, sino que también se sienten perfectas. Cada prenda que diseño cuenta una historia y refleja la personalidad única de quien la lleva.</p>
+                <p>Mi filosofía es simple: la moda debe ser una extensión de tu personalidad. Por eso, trabajo de cerca con cada cliente para entender sus gustos, necesidades y estilo de vida.</p>
+                <a href="#trabajos" class="btn btn-secondary">Conoce Más Sobre Mi Trabajo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-full-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title talk-project-title">Hablemos de tu <span class="highlight">Proyecto</span></h2>
+            <p class="section-description talk-project-description">Estoy aquí para ayudarte a crear la prenda perfecta. Contáctame para una consulta personalizada o agenda tu cita.</p>
+
+            <div class="contact-grid">
+                <div class="contact-info-panel">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+54 9 3786 45-8684</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+54 9 3786 45-8684</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>cristina@criscreaciones.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p>Ituzaingo, Corrientes</p>
+                        </div>
+                    </div>
+
+                    <div class="hours-info">
+                        <h3>Horarios de Atención</h3>
+                        <p>Lunes - Viernes: <span>9:00 - 18:00</span></p>
+                        <p>Sábados: <span>9:00 - 14:00</span></p>
+                        <p>Domingos: <span>Cerrado</span></p>
+                    </div>
+                </div>
+
+                <div class="contact-form-panel">
+                    <div class="form-tabs">
+                        <button class="tab-button active" data-tab="general">Consulta General</button>
+                        <button class="tab-button" data-tab="reserve">Reservar Turno</button>
+                    </div>
+                    <form class="contact-form active" id="general-form" action="https://formspree.io/f/xzzvapqa" method="POST">
+                        <input type="text" name="nombre" placeholder="Nombre completo" required />
+                        <input type="email" name="email" placeholder="Email" required />
+                        <input type="tel" name="telefono" placeholder="Teléfono" />
+                        <select name="servicio" aria-placeholder="Servicio de interés">
+                            <option value="">Seleccionar servicio</option>
+                            <option value="vestido_novia">Vestido de Novia</option>
+                            <option value="vestido_fiesta">Vestido de Fiesta</option>
+                            <option value="ropa_formal">Ropa Formal</option>
+                            <option value="ropa_casual">Ropa Casual</option>
+                            <option value="arreglos">Arreglos y Ajustes</option>
+                            <option value="servicio_express">Servicio Express</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                        <textarea name="mensaje" placeholder="Cuéntame sobre tu proyecto..." rows="5"></textarea>
+                        <button type="submit" class="btn btn-form-submit">Enviar Consulta</button>
+                    </form>
+                    
+                    <form class="contact-form" id="reserve-form" style="display: none;" action="https://formspree.io/f/xpwljaeb" method="POST">
+                         <input type="text" name="nombre_reserva" placeholder="Nombre completo" required />
+                         <input type="email" name="email_reserva" placeholder="Email" required />
+                         <input type="tel" name="telefono_reserva" placeholder="Teléfono" />
+                         <input type="date" name="fecha_reserva" required />
+                         <input type="time" name="hora_reserva" required />
+                         <select name="servicio_reserva" aria-placeholder="Tipo de cita">
+                            <option value="">Seleccionar tipo de cita</option>
+                            <option value="consulta_diseno">Consulta de Diseño</option>
+                            <option value="prueba_vestido">Prueba de Vestido</option>
+                            <option value="ajuste">Ajuste de Prenda</option>
+                            <option value="entrega">Entrega de Pedido</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                         <textarea name="detalles_reserva" placeholder="Detalles adicionales..." rows="3"></textarea>
+                         <button type="submit" class="btn btn-form-submit">Confirmar Reserva</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <a href="#inicio" class="logo-footer">
+                    <img src="imagenes/Logo-Cris-Creaciones-small.png" alt="Cris Creaciones" class="logo-img-footer">
+                </a>
+                <p>Creando elegancia a medida con más de 15 años de experiencia en diseño y confección.</p>
+                <div class="footer-social-icons">
+                    <a href="https://www.instagram.com/cristina.jara.7374?igsh=cWlkazh6YW42NGlq" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1Gai7asvZh/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/+54 9 3786 45-8684" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#servicios">Vestidos de Novia</a></li>
+                    <li><a href="#servicios">Vestidos de Fiesta</a></li>
+                    <li><a href="#servicios">Ropa Formal</a></li>
+                    <li><a href="#servicios">Ropa Casual</a></li>
+                    <li><a href="#servicios">Arreglos y Ajustes</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#trabajos">Trabajos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#sobre-mi">Sobre Mí</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-phone"></i> +54 9 3786 45-8684</p>
+                <p><i class="fas fa-envelope"></i> cristina@criscreaciones.com</p>
+                <p><i class="fas fa-clock"></i> Lun - Vie: 9:00 - 18:00</p>
+                <p><i class="fas fa-clock"></i> Sáb: 9:00 - 14:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Cris Creaciones - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> </body>
+</html>
